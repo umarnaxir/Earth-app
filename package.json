@@ -10,10 +10,17 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native/new-app-screen": "0.83.0",
+    "@react-navigation/bottom-tabs": "^7.8.12",
+    "@react-navigation/elements": "^2.9.2",
+    "@react-navigation/native": "^7.1.25",
+    "@react-navigation/native-stack": "^7.8.6",
+    "lucide-react-native": "^0.561.0",
     "react": "19.2.0",
     "react-native": "0.83.0",
-    "@react-native/new-app-screen": "0.83.0",
-    "react-native-safe-area-context": "^5.5.2"
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-screens": "^4.19.0",
+    "react-native-svg": "^15.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
