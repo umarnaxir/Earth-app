@@ -2,11 +2,13 @@ import React from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../../theme/ThemeContext';
+import { useAuth } from '../../context/AuthContext';
 import { createStyles } from './MoreScreen.styles';
 
 export const MoreScreen: React.FC = () => {
   const insets = useSafeAreaInsets();
   const { colors, isDarkMode, toggleTheme } = useTheme();
+  const { logout, username } = useAuth();
   const styles = createStyles(colors);
 
   return (
@@ -67,8 +69,23 @@ export const MoreScreen: React.FC = () => {
           <Text style={styles.menuItemArrow}>›</Text>
         </TouchableOpacity>
 
+        <Text style={styles.sectionTitle}>Account</Text>
+        
+        <View style={styles.userInfo}>
+          <Text style={styles.userInfoLabel}>Logged in as</Text>
+          <Text style={styles.userInfoName}>{username}</Text>
+        </View>
+
+        <TouchableOpacity 
+          style={styles.logoutButton} 
+          activeOpacity={0.8}
+          onPress={logout}
+        >
+          <Text style={styles.logoutButtonText}>Sign Out</Text>
+        </TouchableOpacity>
+
         <View style={styles.footer}>
-          <Text style={styles.footerText}>© 2024 Pilot Project</Text>
+          <Text style={styles.footerText}>© 2025 The Earth</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

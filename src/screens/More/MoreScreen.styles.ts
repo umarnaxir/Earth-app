@@ -71,6 +71,36 @@ export const createStyles = (colors: ThemeColors) => StyleSheet.create({
   themeToggleIcon: {
     fontSize: 20,
   },
+  userInfo: {
+    backgroundColor: colors.surface,
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  userInfoLabel: {
+    fontSize: 14,
+    color: colors.textSecondary,
+    marginBottom: 4,
+  },
+  userInfoName: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: colors.primary,
+  },
+  logoutButton: {
+    backgroundColor: '#FF5252',
+    borderRadius: 12,
+    padding: 16,
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  logoutButtonText: {
+    fontSize: 16,
+    color: '#FFFFFF',
+    fontWeight: '600',
+  },
   footer: {
     marginTop: 32,
     alignItems: 'center',
