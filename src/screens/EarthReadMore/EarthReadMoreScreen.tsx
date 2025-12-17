@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import type { AboutStackParamList } from '../../../App';
+import type { AboutStackParamList } from '../../navigation/types';
 import { useTheme } from '../../theme/ThemeContext';
 import { createStyles } from './EarthReadMoreScreen.styles';
 

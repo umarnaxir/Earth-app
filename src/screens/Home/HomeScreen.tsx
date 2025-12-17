@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import type { RootTabParamList } from '../../../App';
+import type { RootTabParamList } from '../../navigation/types';
 import { useTheme } from '../../theme/ThemeContext';
 import { createStyles } from './HomeScreen.styles';
 
