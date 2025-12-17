@@ -5,7 +5,7 @@ import { HomeScreen } from './src/screens/Home/HomeScreen';
 import { AboutScreen } from './src/screens/About/AboutScreen';
 import { MoreScreen } from './src/screens/More/MoreScreen';
 import { EarthReadMoreScreen } from './src/screens/EarthReadMore/EarthReadMoreScreen';
-import { colors } from './src/theme/colors';
+import { ThemeProvider, useTheme } from './src/theme/ThemeContext';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -26,6 +26,8 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 const AboutStack = createNativeStackNavigator<AboutStackParamList>();
 
 function AboutStackNavigator() {
+  const { colors } = useTheme();
+  
   return (
     <AboutStack.Navigator
       screenOptions={{
@@ -61,6 +63,7 @@ const MoreIcon = ({ color, size = 24 }: TabIconProps) => (
 
 function TabNavigator() {
   const insets = useSafeAreaInsets();
+  const { colors } = useTheme();
   
   return (
     <Tab.Navigator
@@ -107,17 +110,30 @@ function TabNavigator() {
   );
 }
 
-function App() {
+function AppContent() {
+  const { isDarkMode, colors } = useTheme();
+  
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle="light-content" backgroundColor={colors.background} />
+    <>
+      <StatusBar 
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'} 
+        backgroundColor={colors.background} 
+      />
       <NavigationContainer>
         <TabNavigator />
       </NavigationContainer>
-    </SafeAreaProvider>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <SafeAreaProvider>
+        <AppContent />
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
 
 export default App;
-
-

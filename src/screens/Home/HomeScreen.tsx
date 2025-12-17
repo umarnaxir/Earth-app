@@ -3,13 +3,16 @@ import { Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import type { RootTabParamList } from '../../../App';
-import { styles } from './HomeScreen.styles';
+import { useTheme } from '../../theme/ThemeContext';
+import { createStyles } from './HomeScreen.styles';
 
 type Props = BottomTabScreenProps<RootTabParamList, 'Home'>;
 
 export const HomeScreen: React.FC<Props> = () => {
   const [completed, setCompleted] = useState<Record<number, boolean>>({});
   const insets = useSafeAreaInsets();
+  const { colors } = useTheme();
+  const styles = createStyles(colors);
 
   const toggleCard = (index: number) => {
     setCompleted((prev) => ({

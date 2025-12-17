@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../theme/colors';
+import { ThemeColors } from '../../theme/ThemeContext';
 
-export const styles = StyleSheet.create({
+export const createStyles = (colors: ThemeColors) => StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: colors.background,
@@ -54,6 +54,23 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     color: colors.textSecondary,
   },
+  themeToggle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: colors.primary,
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 12,
+  },
+  themeToggleText: {
+    fontSize: 16,
+    color: '#FFFFFF',
+    fontWeight: '600',
+  },
+  themeToggleIcon: {
+    fontSize: 20,
+  },
   footer: {
     marginTop: 32,
     alignItems: 'center',
@@ -64,4 +81,3 @@ export const styles = StyleSheet.create({
     color: colors.textSecondary,
   },
 });
-

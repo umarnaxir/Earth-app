@@ -10,4 +10,4 @@ export const colors = {
   border: '#263238',
 };
 
-
+export { lightTheme, darkTheme, type ThemeColors } from './ThemeContext';

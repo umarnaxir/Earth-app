@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../theme/colors';
+import { ThemeColors } from '../../theme/ThemeContext';
 
-export const styles = StyleSheet.create({
+export const createStyles = (colors: ThemeColors) => StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: colors.background,
@@ -122,7 +122,7 @@ export const styles = StyleSheet.create({
   },
   cardCompleted: {
     borderColor: colors.primary,
-    backgroundColor: '#101826',
+    backgroundColor: colors.surfaceAlt,
   },
   icon: {
     width: 40,
@@ -176,7 +176,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   primaryButtonText: {
-    color: colors.textPrimary,
+    color: '#FFFFFF',
     fontSize: 15,
     fontWeight: '700',
   },
@@ -200,5 +200,3 @@ export const styles = StyleSheet.create({
     lineHeight: 22,
   },
 });
-
-

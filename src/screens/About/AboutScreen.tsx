@@ -3,12 +3,15 @@ import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { AboutStackParamList } from '../../../App';
-import { styles } from './AboutScreen.styles';
+import { useTheme } from '../../theme/ThemeContext';
+import { createStyles } from './AboutScreen.styles';
 
 type Props = NativeStackScreenProps<AboutStackParamList, 'AboutMain'>;
 
 export const AboutScreen: React.FC<Props> = ({ navigation }) => {
   const insets = useSafeAreaInsets();
+  const { colors } = useTheme();
+  const styles = createStyles(colors);
 
   return (
     <SafeAreaView style={styles.root}>
@@ -70,4 +73,3 @@ export const AboutScreen: React.FC<Props> = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
