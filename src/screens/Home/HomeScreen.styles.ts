@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../theme/colors';
+import { colors } from '../../theme/colors';
 
 export const styles = StyleSheet.create({
   root: {
@@ -16,9 +16,9 @@ export const styles = StyleSheet.create({
     borderBottomColor: colors.border,
   },
   header: {
-    paddingHorizontal: 20,
-    paddingTop: 16,
-    paddingBottom: 12,
+    paddingHorizontal: 10,
+    paddingTop: 6,
+    paddingBottom: 6,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -28,8 +28,8 @@ export const styles = StyleSheet.create({
   },
   headerTitle: {
     color: colors.textPrimary,
-    fontSize: 22,
-    fontWeight: '700',
+    fontSize: 24,
+    fontWeight: '900',
   },
   headerSubTitle: {
     color: colors.textSecondary,
