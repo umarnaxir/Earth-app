@@ -3,7 +3,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const AUTH_STORAGE_KEY = '@app_auth';
 
-// Hardcoded credentials
 const VALID_USERNAME = 'umar';
 const VALID_PASSWORD = '1122';
 
